@@ -1,0 +1,383 @@
+:root {
+  --bg-primary: radial-gradient(circle at top, #2f1f45, #130b1f 60%, #0a0711);
+  --bg-secondary: linear-gradient(120deg, #f5d8f0, #ebe3ff, #ffffff);
+  --text-main: #fff6fb;
+  --text-soft: #f8d9ef;
+  --glass: rgba(255, 255, 255, 0.16);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --gold: #f6d995;
+  --pink: #f7a8d5;
+  --lavender: #c7b2ff;
+  --shadow: 0 12px 30px rgba(17, 8, 30, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body.light {
+  background: var(--bg-secondary);
+  color: #2d2236;
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  background: rgba(11, 8, 17, 0.96);
+  transition: opacity 0.6s ease;
+}
+
+.loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-heart {
+  font-size: 3rem;
+  animation: pulse 1.1s infinite;
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 240, 189, 0.45), rgba(255, 240, 189, 0));
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  z-index: 1200;
+  background: linear-gradient(90deg, var(--pink), var(--gold));
+}
+
+.sky-layer,
+#confettiCanvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+#confettiCanvas {
+  z-index: 50;
+}
+
+.sky-layer {
+  z-index: -1;
+  overflow: hidden;
+}
+
+.moon {
+  position: absolute;
+  right: 8%;
+  top: 10%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff8d8 20%, #f1d8aa 70%);
+  box-shadow: 0 0 40px #ffe4ad;
+}
+
+.cloud {
+  position: absolute;
+  width: 220px;
+  height: 70px;
+  border-radius: 80px;
+  filter: blur(2px);
+  background: rgba(255, 255, 255, 0.11);
+  animation: drift 26s linear infinite;
+}
+
+.cloud-1 {
+  top: 24%;
+  left: -240px;
+}
+
+.cloud-2 {
+  top: 40%;
+  left: -300px;
+  animation-duration: 34s;
+}
+
+.floating-controls {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.icon-btn,
+.primary-btn,
+.gift-box {
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  color: inherit;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+}
+
+.primary-btn {
+  padding: 14px 32px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 16px;
+  background: linear-gradient(120deg, rgba(247, 168, 213, 0.55), rgba(246, 217, 149, 0.45));
+  animation: glow 2.3s ease-in-out infinite;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 100px 0 80px;
+  position: relative;
+  z-index: 100;
+}
+
+section {
+  padding: 48px 28px;
+  margin: 28px 0;
+  border-radius: 26px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+}
+
+h1,
+h2,
+.signature {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  margin: 0;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.subtitle {
+  line-height: 1.7;
+  font-size: 1.08rem;
+  max-width: 760px;
+}
+
+.wish-cards,
+.flip-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.wish-cards {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.glass-card {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.flip-grid {
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+}
+
+.flip-card {
+  perspective: 900px;
+  height: 120px;
+}
+
+.flip-inner {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.flip-card:hover .flip-inner,
+.flip-card:focus-within .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.13);
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.timeline-list {
+  display: grid;
+  gap: 12px;
+}
+
+.timeline-list article {
+  position: relative;
+  padding: 16px 16px 16px 22px;
+  border-left: 2px solid var(--gold);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.timeline-list span {
+  font-weight: 700;
+}
+
+.gift-box {
+  width: 88px;
+  height: 88px;
+  font-size: 2.2rem;
+}
+
+.gift-message,
+.apology p,
+blockquote {
+  line-height: 1.8;
+}
+
+.final-message {
+  text-align: center;
+}
+
+.signature {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.star,
+.heart,
+.petal,
+.particle {
+  position: absolute;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation-name: twinkle;
+}
+
+.heart,
+.petal,
+.particle {
+  font-size: 14px;
+  top: -10%;
+  animation-name: fall;
+}
+
+.particle {
+  color: rgba(255, 246, 188, 0.8);
+  font-size: 10px;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 16px rgba(246, 217, 149, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(247, 168, 213, 0.65);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes twinkle {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(115vh);
+  }
+}
+
+@keyframes drift {
+  to {
+    transform: translateX(calc(100vw + 320px));
+  }
+}
+
+@media (max-width: 700px) {
+  section {
+    padding: 38px 16px;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+
+  .floating-controls {
+    top: auto;
+    bottom: 14px;
+    right: 14px;
+  }
+}
