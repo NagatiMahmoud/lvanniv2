@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Romantic birthday preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="50%" stop-color="#20133a"/>
+      <stop offset="100%" stop-color="#35184c"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="0.78" cy="0.14" r="0.5">
+      <stop offset="0%" stop-color="#fff8db" stop-opacity="0.95"/>
+      <stop offset="46%" stop-color="#fff8db" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#fff8db" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="935" cy="100" r="220" fill="url(#moon)"/>
+  <g fill="#fff8fd" opacity="0.85">
+    <circle cx="110" cy="90" r="2"/>
+    <circle cx="200" cy="150" r="1.8"/>
+    <circle cx="345" cy="105" r="1.5"/>
+    <circle cx="480" cy="180" r="2.1"/>
+    <circle cx="720" cy="88" r="1.5"/>
+    <circle cx="1030" cy="132" r="1.8"/>
+  </g>
+  <rect x="90" y="118" width="1020" height="392" rx="36" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.16)"/>
+  <text x="150" y="265" fill="#fff8fd" font-family="Cormorant Garamond, Georgia, serif" font-size="68" font-weight="700">Happy 29th Birthday, My Love ❤️</text>
+  <text x="150" y="340" fill="#f4eaff" font-family="Inter, Arial, sans-serif" font-size="28">A romantic apology letter, birthday wishes, and a magical surprise.</text>
+  <rect x="150" y="388" width="240" height="64" rx="32" fill="#f8a5c8"/>
+  <text x="187" y="430" fill="#1e1220" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Open My Heart</text>
+  <g fill="#f6d48b" opacity="0.9">
+    <path d="M965 395c-28-26-58-54-58-92 0-29 24-51 51-51 16 0 31 7 40 18 9-11 24-18 40-18 27 0 51 22 51 51 0 38-30 66-58 92l-33 31-33-31Z"/>
+  </g>
+</svg>
