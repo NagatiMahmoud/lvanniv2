@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A romantic birthday surprise page with a heartfelt apology, elegant wishes, and a magical love letter." />
+  <meta name="theme-color" content="#0d1020" />
+  <meta property="og:title" content="Happy 29th Birthday, My Love ❤️" />
+  <meta property="og:description" content="A romantic birthday surprise with a sincere apology and heartfelt wishes." />
+  <meta property="og:image" content="assets/social-preview.svg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Happy 29th Birthday, My Love ❤️" />
+  <meta name="twitter:description" content="A romantic birthday surprise with a sincere apology and heartfelt wishes." />
+  <meta name="twitter:image" content="assets/social-preview.svg" />
+  <title>Happy 29th Birthday, My Love ❤️</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="dark">
+  <div class="page-shell">
+    <div class="scene-layers" aria-hidden="true">
+      <div class="moon-glow"></div>
+      <div class="cloud cloud-one"></div>
+      <div class="cloud cloud-two"></div>
+      <div class="cloud cloud-three"></div>
+      <div class="stars stars-a"></div>
+      <div class="stars stars-b"></div>
+      <div class="stars stars-c"></div>
+      <div class="hearts-rain" id="heartsRain"></div>
+      <div class="flower-petals" id="petalsLayer"></div>
+      <div class="floating-particles" id="particlesLayer"></div>
+      <div class="cursor-glow" id="cursorGlow"></div>
+    </div>
+
+    <div class="loading-screen" id="loadingScreen" aria-hidden="true">
+      <div class="loading-card glass-panel">
+        <div class="loader-orbit" aria-hidden="true"></div>
+        <p>Preparing a little magic for you...</p>
+      </div>
+    </div>
+
+    <div class="progress-bar" aria-hidden="true">
+      <span id="progressIndicator"></span>
+    </div>
+
+    <header class="topbar glass-panel">
+      <div>
+        <p class="eyebrow">A private birthday note</p>
+        <h1>For my fiancée</h1>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+          <span class="icon">☾</span>
+        </button>
+        <button class="icon-button music-toggle" id="musicToggle" type="button" aria-label="Play romantic music">
+          <span class="icon">♪</span>
+        </button>
+      </div>
+    </header>
+
+    <audio id="ambientAudio" loop preload="none"></audio>
+
+    <main>
+      <section class="hero section reveal-on-load" id="hero">
+        <div class="hero-grid">
+          <div class="hero-copy glass-panel">
+            <p class="eyebrow typing-cue"><span id="typingTarget"></span><span class="typing-caret" aria-hidden="true"></span></p>
+            <h2>Happy 29th Birthday, My Love ❤️</h2>
+            <p class="hero-subtitle">Today is your special day, and I couldn't let it pass without telling you how much you mean to me.</p>
+            <p class="hero-note">A soft letter, a sincere apology, and a small surprise wrapped in starlight.</p>
+            <div class="hero-actions">
+              <a class="glow-button" href="#apology" id="openHeartBtn">Open My Heart</a>
+              <button class="secondary-button" id="scrollWishesBtn" type="button">See the Wishes</button>
+            </div>
+          </div>
+          <div class="hero-portrait glass-panel">
+            <div class="portrait-orb">
+              <div class="portrait-ring"></div>
+              <div class="portrait-inner">
+                <span>29</span>
+                <small>beautiful years</small>
+              </div>
+            </div>
+            <p class="portrait-caption">Tonight belongs to tenderness, light, and a little bit of wonder.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section apology-section hidden-section reveal-section" id="apology">
+        <div class="section-heading">
+          <p class="eyebrow">A gentle apology</p>
+          <h3>From my heart to yours</h3>
+        </div>
+        <article class="glass-panel apology-letter">
+          <p>My love, I know we've had a difficult moment.</p>
+          <p>I'm truly sorry for the pain I caused. That is not what I want for us, and it is not how I want your birthday to feel.</p>
+          <p>I miss talking with you, I miss your voice, and I miss the easy way we usually find our way back to each other.</p>
+          <p>You deserve happiness today, tenderness today, and a heart that feels fully celebrated today.</p>
+          <p>I hope we can smile together again, gently and soon.</p>
+        </article>
+      </section>
+
+      <section class="section reveal-section" id="wishes">
+        <div class="section-heading">
+          <p class="eyebrow">Birthday wishes</p>
+          <h3>May this year feel softer, brighter, and sweeter</h3>
+        </div>
+        <div class="wishes-grid">
+          <article class="wish-card glass-panel">
+            <h4>Warm joy</h4>
+            <p>May your 29th year open with calm mornings, bright laughter, and moments that feel like exhale.</p>
+          </article>
+          <article class="wish-card glass-panel">
+            <h4>Quiet magic</h4>
+            <p>May ordinary days surprise you with beauty and every dream find kinder ground to grow on.</p>
+          </article>
+          <article class="wish-card glass-panel">
+            <h4>Gentle strength</h4>
+            <p>May you feel supported, cherished, and proud of how deeply you carry so much with grace.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal-section" id="reasons">
+        <div class="section-heading">
+          <p class="eyebrow">Why I love you</p>
+          <h3>Ten little reasons, and so many more beyond them</h3>
+        </div>
+        <div class="reasons-grid">
+          <article class="flip-card glass-panel"><div class="flip-card-inner"><div class="flip-front">Your smile</div><div class="flip-back">It can soften any room.</div></div></article>
+          <article class="flip-card glass-panel"><div class="flip-card-inner"><div class="flip-front">Your kindness</div><div class="flip-back">It reaches people in quiet ways.</div></div></article>
+          <article class="flip-card glass-panel"><div class="flip-card-inner"><div class="flip-front">Your patience</div><div class="flip-back">It makes love feel safe.</div></div></article>
+          <article class="flip-card glass-panel"><div class="flip-card-inner"><div class="flip-front">Your heart</div><div class="flip-back">It is generous and rare.</div></div></article>
+          <article class="flip-card glass-panel"><div class="flip-card-inner"><div class="flip-front">Your laugh</div><div class="flip-back">It stays with me like music.</div></div></article>
+          <article class="flip-card glass-panel"><div class="flip-card-inner"><div class="flip-front">Your strength</div><div class="flip-back">It inspires me more than you know.</div></div></article>
+          <article class="flip-card glass-panel"><div class="flip-card-inner"><div class="flip-front">Your honesty</div><div class="flip-back">It makes our bond real.</div></div></article>
+          <article class="flip-card glass-panel"><div class="flip-card-inner"><div class="flip-front">Your dreams</div><div class="flip-back">They deserve every beautiful chance.</div></div></article>
+          <article class="flip-card glass-panel"><div class="flip-card-inner"><div class="flip-front">Your glow</div><div class="flip-back">It changes the atmosphere around you.</div></div></article>
+          <article class="flip-card glass-panel"><div class="flip-card-inner"><div class="flip-front">Your presence</div><div class="flip-back">It feels like home to me.</div></div></article>
+        </div>
+      </section>
+
+      <section class="section reveal-section" id="memories">
+        <div class="section-heading">
+          <p class="eyebrow">Memories timeline</p>
+          <h3>Little moments to keep and edit later</h3>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item glass-panel"><span class="timeline-date">Memory 01</span><h4>The first time we really laughed together</h4><p>Edit this moment later with the one that means the most to both of you.</p></article>
+          <article class="timeline-item glass-panel"><span class="timeline-date">Memory 02</span><h4>A night that felt easy and beautiful</h4><p>Replace this placeholder with your favorite shared evening or trip.</p></article>
+          <article class="timeline-item glass-panel"><span class="timeline-date">Memory 03</span><h4>The moment I knew you were special</h4><p>Use this space for a tender detail only she would recognize.</p></article>
+          <article class="timeline-item glass-panel"><span class="timeline-date">Memory 04</span><h4>Our best inside joke</h4><p>Drop in a memory that instantly makes both of you smile.</p></article>
+        </div>
+      </section>
+
+      <section class="section reveal-section surprise-section" id="surprise">
+        <div class="section-heading">
+          <p class="eyebrow">A surprise</p>
+          <h3>Tap the gift when you’re ready</h3>
+        </div>
+        <div class="surprise-wrap glass-panel">
+          <button class="gift-box" id="giftButton" type="button" aria-label="Open the surprise gift">
+            <span class="gift-shadow"></span>
+            <span class="gift-lid"></span>
+            <span class="gift-body"></span>
+            <span class="gift-ribbon"></span>
+            <span class="gift-ribbon vertical"></span>
+            <span class="gift-bow"></span>
+          </button>
+          <p class="surprise-message" id="surpriseMessage">You are the most beautiful gift life has ever given me.</p>
+        </div>
+      </section>
+
+      <section class="section reveal-section final-section" id="final">
+        <div class="final-card glass-panel">
+          <p class="final-message">No matter what happened between us,<br />my wish today is simply to see you smile.<br /><br />Happy Birthday.<br /><br />I miss you.<br /><br />I love you.</p>
+          <p class="signature">— Mahmoud ❤️</p>
+        </div>
+      </section>
+    </main>
+
+    <button class="floating-music" id="floatingMusic" type="button" aria-label="Play or pause the romantic music">
+      <span class="floating-music-ring"></span>
+      <span class="floating-music-icon">♪</span>
+    </button>
+
+    <canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
